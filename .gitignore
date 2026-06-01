@@ -1,0 +1,8 @@
+# Product PDFs — not part of the web publication
+*.pdf
+
+# Scratch / concept notes
+CONCEPT.txt
+
+# macOS
+.DS_Store
