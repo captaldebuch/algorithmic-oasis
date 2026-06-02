@@ -716,14 +716,21 @@
             letter-spacing: 1px;
         }
 
-        .tech-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin: 64px 0;
+        .tech-grid .figure-card img {
+            height: 260px;
+            width: 100%;
+            object-fit: contain;
+            background: var(--card-2);
+            padding: 12px;
+            border: 1px solid var(--border);
         }
-        @media (max-width: 1024px) {
-            .tech-grid { grid-template-columns: 1fr; }
+        .tech-grid .figure-card {
+            padding: 16px;
+        }
+        .tech-grid .figure-caption {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
         }
 
         .pillar-diagram {
