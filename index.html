@@ -716,12 +716,14 @@
             letter-spacing: 1px;
         }
 
-        .side-by-side {
+        .tech-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
+            gap: 24px;
             margin: 64px 0;
+        }
+        @media (max-width: 1024px) {
+            .tech-grid { grid-template-columns: 1fr; }
         }
 
         .pillar-diagram {
@@ -796,7 +798,7 @@
             .hero, nav .nav-inner, .container, footer { padding-left: 32px; padding-right: 32px; }
             .logo-bar { padding: 16px 32px; }
             .vision-cols { grid-template-columns: 1fr; gap: 48px; }
-            .side-by-side { grid-template-columns: 1fr; gap: 32px; }
+            .tech-grid { grid-template-columns: 1fr; gap: 32px; }
             .stats-row { grid-template-columns: repeat(2, 1fr); }
             .pillars-grid { grid-template-columns: 1fr; background: none; gap: 16px; border: none; }
             .pillar-card { border: 1px solid var(--border); border-radius: 8px; }
@@ -969,7 +971,7 @@
             <div class="divider"></div>
             <p class="section-lead">The AI Research Garden integrates three critical domains: autonomous water production, intelligent energy management, and an interdisciplinary pedagogical framework — each essential to the facility's operation.</p>
 
-            <div class="side-by-side">
+            <div class="tech-grid">
                 <div class="figure-card">
                     <img src="téléchargement (1).jpeg" alt="Technical Architecture">
                     <div class="figure-caption">
@@ -982,6 +984,20 @@
                     <div class="figure-caption">
                         <strong>Facility</strong>
                         Ma Hawa unit deployment in a controlled botanical environment.
+                    </div>
+                </div>
+                <div class="figure-card">
+                    <img src="images (2).jpeg" alt="Field Sensory Deployment">
+                    <div class="figure-caption">
+                        <strong>Sensing</strong>
+                        In-situ capacitive soil moisture sensor deployment.
+                    </div>
+                </div>
+                <div class="figure-card">
+                    <img src="Screen-Shot-2022-01-25-at-12.07.36-PM.webp" alt="Real-time NPK Monitoring">
+                    <div class="figure-caption">
+                        <strong>Monitoring</strong>
+                        Real-time NPK (Nitrogen, Phosphorus, Potassium) lab validation.
                     </div>
                 </div>
             </div>
