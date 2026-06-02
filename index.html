@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Algorithmic Oasis — A living laboratory at Sorbonne University Abu Dhabi where agentic AI governs the metabolism of desert flora, harvesting water from air and energy from the sun.">
-    <title>Algorithmic Oasis | SUAD AI Research Garden</title>
+    <meta name="description" content="The AI Research Garden — A living laboratory at Sorbonne University Abu Dhabi where agentic AI governs the metabolism of desert flora, harvesting water from air and energy from the sun.">
+    <title>The AI Research Garden | SUAD AI Research Garden</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,27 +17,27 @@
             --bordeaux:       #8B1A2F;
             --bordeaux-light: #A82840;
             --gold:           #C9923A;
-            --gold-light:     #E0B46A;
-            --sand:           #E8D4A8;
-            --cream:          #F8F2E4;
+            --gold-light:     #B07D2B;
+            --sand:           #F4EBD0;
+            --cream:          #FDFBF7;
             --oasis:          #2A5C45;
             --oasis-light:    #3D7A5F;
             --night:          #0B0C12;
-            --dark:           #10100C;
-            --card:           #1A1814;
-            --card-2:         #211E16;
-            --muted:          #8A7B68;
-            --muted-light:    #A89880;
-            --body:           #D8C9AA;
-            --border:         rgba(201,146,58,0.18);
-            --border-hover:   rgba(201,146,58,0.45);
+            --dark:           #1A1A1A;
+            --card:           #FFFFFF;
+            --card-2:         #F9F7F2;
+            --muted:          #666666;
+            --muted-light:    #888888;
+            --body:           #2C2C2C;
+            --border:         rgba(0,0,0,0.08);
+            --border-hover:   rgba(139,26,47,0.15);
         }
 
         html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--dark);
+            background-color: var(--cream);
             color: var(--body);
             line-height: 1.7;
             font-size: 16px;
@@ -46,16 +46,28 @@
         /* ─── LOGO BAR ─────────────────────────────── */
         .logo-bar {
             background: #FFFFFF;
-            padding: 14px 52px;
+            padding: 20px 52px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid var(--bordeaux);
+            border-bottom: 1px solid var(--border);
         }
-        .logo-bar img {
+        .logo-bar .suad-logo {
+            height: 54px;
+            width: auto;
+        }
+        .logo-bar .safir-logo {
+            height: 48px;
+            width: auto;
+        }
+        .logo-bar .scai-logo {
             height: 46px;
             width: auto;
-            object-fit: contain;
+        }
+        .logo-bar .partner-logo {
+            height: 38px;
+            width: auto;
+            opacity: 0.8;
         }
 
         /* ─── NAVIGATION ───────────────────────────── */
@@ -63,7 +75,7 @@
             position: sticky;
             top: 0;
             z-index: 200;
-            background: rgba(10, 10, 10, 0.94);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
@@ -80,10 +92,10 @@
         .nav-brand {
             font-family: 'Playfair Display', serif;
             font-size: 1rem;
-            color: var(--gold);
+            color: var(--bordeaux);
             text-decoration: none;
             letter-spacing: 1.5px;
-            font-style: italic;
+            font-weight: 700;
         }
         .nav-links {
             display: flex;
@@ -99,16 +111,16 @@
             text-transform: uppercase;
             transition: color 0.25s;
         }
-        .nav-links a:hover { color: var(--gold-light); }
+        .nav-links a:hover { color: var(--bordeaux); }
 
         /* ─── HERO ─────────────────────────────────── */
         .hero {
-            min-height: 92vh;
+            min-height: 90vh;
             background:
                 linear-gradient(to bottom,
-                    rgba(11,12,18,0.25) 0%,
-                    rgba(11,12,18,0.55) 55%,
-                    var(--dark) 100%
+                    rgba(253,251,247,0.2) 0%,
+                    rgba(253,251,247,0.6) 55%,
+                    var(--cream) 100%
                 ),
                 url('pressimage-png.webp');
             background-size: cover;
@@ -129,8 +141,8 @@
             font-weight: 700;
             letter-spacing: 3.5px;
             text-transform: uppercase;
-            color: var(--gold);
-            border: 1px solid rgba(201,146,58,0.6);
+            color: var(--bordeaux);
+            border: 1px solid rgba(139,26,47,0.3);
             padding: 7px 16px;
             border-radius: 2px;
             margin-bottom: 28px;
@@ -138,22 +150,22 @@
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.8rem, 7vw, 5.5rem);
-            color: var(--cream);
+            color: var(--night);
             line-height: 1.05;
             margin-bottom: 28px;
             font-weight: 700;
         }
         .hero h1 em {
-            color: var(--gold);
+            color: var(--bordeaux);
             font-style: italic;
         }
         .hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: var(--sand);
-            max-width: 660px;
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--muted);
+            max-width: 720px;
             margin-bottom: 48px;
-            line-height: 1.85;
+            line-height: 1.8;
         }
         .hero-meta {
             display: flex;
@@ -163,26 +175,26 @@
             border-radius: 4px;
             overflow: hidden;
             display: inline-flex;
+            background: #FFFFFF;
         }
         .hero-meta-item {
             display: flex;
             flex-direction: column;
             padding: 16px 28px;
             border-right: 1px solid var(--border);
-            background: rgba(10,10,10,0.6);
         }
         .hero-meta-item:last-child { border-right: none; }
         .hero-meta-label {
             font-size: 0.62rem;
             letter-spacing: 2.5px;
             text-transform: uppercase;
-            color: var(--muted);
+            color: var(--muted-light);
             margin-bottom: 4px;
         }
         .hero-meta-value {
             font-size: 0.9rem;
             font-weight: 600;
-            color: var(--gold-light);
+            color: var(--night);
         }
 
         /* ─── LAYOUT ───────────────────────────────── */
@@ -197,28 +209,28 @@
             font-size: 0.65rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--bordeaux-light);
+            color: var(--bordeaux);
             font-weight: 700;
             margin-bottom: 14px;
         }
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.9rem, 4vw, 3.2rem);
-            color: var(--cream);
+            color: var(--night);
             line-height: 1.15;
             margin-bottom: 14px;
         }
         .section-lead {
-            font-size: 1rem;
-            color: var(--muted-light);
-            max-width: 660px;
-            line-height: 1.85;
+            font-size: 1.05rem;
+            color: var(--muted);
+            max-width: 720px;
+            line-height: 1.8;
             margin-bottom: 64px;
         }
         .divider {
             width: 56px;
             height: 3px;
-            background: linear-gradient(to right, var(--bordeaux), var(--gold));
+            background: var(--bordeaux);
             border-radius: 2px;
             margin: 20px 0 40px;
         }
@@ -231,24 +243,24 @@
             align-items: start;
         }
         .vision-text p {
-            font-size: 1.02rem;
-            line-height: 1.9;
+            font-size: 1.05rem;
+            line-height: 1.85;
             color: var(--body);
             margin-bottom: 22px;
         }
-        .vision-text strong { color: var(--cream); font-weight: 600; }
+        .vision-text strong { color: var(--night); font-weight: 600; }
         .vision-quote {
             background: var(--card-2);
-            border-left: 4px solid var(--gold);
+            border-left: 4px solid var(--bordeaux);
             padding: 36px 36px 36px 32px;
-            border-radius: 0 12px 12px 0;
+            border-radius: 0 8px 8px 0;
             margin-bottom: 32px;
         }
         .vision-quote blockquote {
             font-family: 'Playfair Display', serif;
             font-size: 1.25rem;
             font-style: italic;
-            color: var(--sand);
+            color: var(--night);
             line-height: 1.65;
         }
         .vision-quote cite {
@@ -268,16 +280,17 @@
             gap: 1px;
             background: var(--border);
             margin-top: 64px;
+            border: 1px solid var(--border);
         }
         .stat-item {
-            background: var(--card);
+            background: #FFFFFF;
             padding: 32px 28px;
             text-align: center;
         }
         .stat-number {
             font-family: 'Playfair Display', serif;
             font-size: 2.6rem;
-            color: var(--gold);
+            color: var(--bordeaux);
             font-weight: 700;
             display: block;
             line-height: 1;
@@ -295,11 +308,11 @@
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             grid-template-rows: 320px 210px;
-            gap: 10px;
+            gap: 12px;
         }
         .gallery-item {
             overflow: hidden;
-            border-radius: 6px;
+            border-radius: 4px;
             position: relative;
             cursor: pointer;
         }
@@ -311,13 +324,6 @@
             transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         .gallery-item:hover img { transform: scale(1.05); }
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(11,12,18,0.45) 0%, transparent 55%);
-            pointer-events: none;
-        }
 
         /* ─── TECHNOLOGY PILLARS ───────────────────── */
         .pillars-grid {
@@ -325,9 +331,10 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 1px;
             background: var(--border);
+            border: 1px solid var(--border);
         }
         .pillar-card {
-            background: var(--card);
+            background: #FFFFFF;
             padding: 52px 40px;
             position: relative;
             transition: background 0.3s;
@@ -339,7 +346,7 @@
             right: 28px;
             font-family: 'Space Mono', monospace;
             font-size: 3.5rem;
-            color: rgba(201,146,58,0.08);
+            color: rgba(139,26,47,0.05);
             font-weight: 700;
             line-height: 1;
             user-select: none;
@@ -347,28 +354,29 @@
         .pillar-icon {
             width: 52px;
             height: 52px;
-            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-light));
+            background: var(--bordeaux);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.4rem;
             margin-bottom: 28px;
+            color: #FFFFFF;
         }
         .pillar-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.45rem;
-            color: var(--cream);
+            color: var(--night);
             margin-bottom: 18px;
             line-height: 1.25;
         }
         .pillar-card p {
-            font-size: 0.93rem;
-            color: var(--muted-light);
-            line-height: 1.8;
+            font-size: 0.95rem;
+            color: var(--body);
+            line-height: 1.75;
             margin-bottom: 28px;
         }
-        .pillar-card strong { color: var(--cream); font-weight: 500; }
+        .pillar-card strong { color: var(--night); font-weight: 600; }
         .progress-meta {
             display: flex;
             justify-content: space-between;
@@ -379,17 +387,17 @@
             font-size: 0.65rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: var(--muted);
+            color: var(--muted-light);
         }
         .progress-bar {
             height: 3px;
-            background: rgba(255,255,255,0.07);
+            background: rgba(0,0,0,0.05);
             border-radius: 2px;
             overflow: hidden;
         }
         .progress-fill {
             height: 100%;
-            background: linear-gradient(to right, var(--bordeaux), var(--gold));
+            background: var(--bordeaux);
             border-radius: 2px;
         }
 
@@ -397,55 +405,54 @@
         .research-list {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
         }
         .research-card {
             display: grid;
             grid-template-columns: 72px 1fr auto;
             gap: 36px;
             align-items: start;
-            background: var(--card);
+            background: #FFFFFF;
             padding: 38px;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid var(--border);
-            transition: border-color 0.3s, background 0.3s;
+            transition: border-color 0.3s, transform 0.2s;
         }
         .research-card:hover {
-            border-color: var(--border-hover);
-            background: var(--card-2);
+            border-color: var(--bordeaux);
+            transform: translateY(-2px);
         }
         .research-index {
             font-family: 'Space Mono', monospace;
             font-size: 2.2rem;
-            color: var(--bordeaux-light);
+            color: var(--bordeaux);
             font-weight: 700;
             line-height: 1;
-            opacity: 0.7;
+            opacity: 0.15;
             padding-top: 4px;
         }
         .research-body h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--cream);
+            font-size: 1.25rem;
+            color: var(--night);
             margin-bottom: 10px;
         }
         .research-body p {
-            font-size: 0.9rem;
-            color: var(--muted-light);
+            font-size: 0.95rem;
+            color: var(--body);
             line-height: 1.75;
         }
-        .research-body strong { color: var(--cream); font-weight: 500; }
-        .research-body em { color: var(--gold-light); font-style: italic; }
+        .research-body strong { color: var(--night); font-weight: 600; }
         .research-tag {
             font-size: 0.65rem;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            background: rgba(42, 92, 69, 0.2);
-            color: var(--oasis-light);
+            background: var(--card-2);
+            color: var(--bordeaux);
             padding: 7px 14px;
             border-radius: 2px;
             white-space: nowrap;
-            border: 1px solid rgba(42, 92, 69, 0.4);
+            border: 1px solid var(--border);
             align-self: start;
             margin-top: 4px;
         }
@@ -457,33 +464,33 @@
             gap: 24px;
         }
         .pedagogy-card {
-            background: var(--card);
+            background: #FFFFFF;
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 36px 30px;
             transition: border-color 0.3s, transform 0.3s;
         }
         .pedagogy-card:hover {
-            border-color: var(--border-hover);
+            border-color: var(--bordeaux);
             transform: translateY(-3px);
         }
         .pedagogy-card .label {
             font-size: 0.65rem;
             letter-spacing: 2.5px;
             text-transform: uppercase;
-            color: var(--bordeaux-light);
+            color: var(--bordeaux);
             font-weight: 700;
             margin-bottom: 12px;
         }
         .pedagogy-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.15rem;
-            color: var(--cream);
+            color: var(--night);
             margin-bottom: 14px;
         }
         .pedagogy-card p {
-            font-size: 0.88rem;
-            color: var(--muted-light);
+            font-size: 0.92rem;
+            color: var(--body);
             line-height: 1.75;
         }
 
@@ -494,13 +501,13 @@
             gap: 32px;
         }
         .timeline-year-block {
-            background: var(--card);
+            background: #FFFFFF;
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
         }
         .timeline-year-header {
-            background: linear-gradient(135deg, var(--card-2), var(--card));
+            background: var(--card-2);
             border-bottom: 1px solid var(--border);
             padding: 28px 32px;
         }
@@ -508,20 +515,17 @@
             font-size: 0.65rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--muted);
+            color: var(--muted-light);
             margin-bottom: 8px;
         }
         .timeline-year-header h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
-            color: var(--gold);
-        }
-        .timeline-phases {
-            padding: 0;
+            color: var(--bordeaux);
         }
         .timeline-phase {
             padding: 26px 32px;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid var(--border);
             position: relative;
         }
         .timeline-phase:last-child { border-bottom: none; }
@@ -529,13 +533,13 @@
             font-size: 0.65rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--bordeaux-light);
+            color: var(--muted-light);
             font-weight: 600;
             margin-bottom: 6px;
         }
         .timeline-phase h4 {
-            font-weight: 600;
-            color: var(--cream);
+            font-weight: 700;
+            color: var(--night);
             font-size: 0.95rem;
             margin-bottom: 14px;
         }
@@ -543,22 +547,21 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 7px;
+            gap: 8px;
         }
         .milestone-list li {
-            font-size: 0.84rem;
-            color: var(--muted);
+            font-size: 0.88rem;
+            color: var(--body);
             padding-left: 18px;
             position: relative;
             line-height: 1.5;
         }
         .milestone-list li::before {
-            content: '→';
+            content: '•';
             position: absolute;
             left: 0;
-            color: var(--gold);
-            font-size: 0.72rem;
-            top: 2px;
+            color: var(--bordeaux);
+            top: 0;
         }
 
         /* ─── PARTNERSHIP ──────────────────────────── */
@@ -569,48 +572,50 @@
             margin-bottom: 48px;
         }
         .partner-card {
-            background: var(--card);
+            background: #FFFFFF;
             border: 1px solid var(--border);
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 44px 32px;
             text-align: center;
             transition: transform 0.3s, border-color 0.3s;
         }
         .partner-card:hover {
             transform: translateY(-4px);
-            border-color: var(--border-hover);
+            border-color: var(--bordeaux);
         }
-        .partner-icon {
-            width: 64px;
+        .partner-card .partner-logo-container {
             height: 64px;
-            border-radius: 50%;
-            margin: 0 auto 24px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.7rem;
+        }
+        .partner-card .partner-logo-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
         }
         .partner-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.15rem;
-            color: var(--cream);
+            color: var(--night);
             margin-bottom: 12px;
         }
         .partner-card p {
-            font-size: 0.88rem;
-            color: var(--muted-light);
+            font-size: 0.92rem;
+            color: var(--body);
             line-height: 1.75;
         }
 
         /* ─── UAE STRATEGY BLOCK ───────────────────── */
         .uae-block {
-            background: var(--card);
-            border-radius: 14px;
+            background: #FFFFFF;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border);
         }
         .uae-header-stripe {
-            background: linear-gradient(105deg, #00732F 0%, #1A1A1A 45%, #CE1126 100%);
+            background: var(--night);
             padding: 52px;
             text-align: center;
         }
@@ -618,7 +623,7 @@
             font-size: 0.65rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.4);
             margin-bottom: 12px;
         }
         .uae-header-stripe h3 {
@@ -628,22 +633,22 @@
             margin-bottom: 8px;
         }
         .uae-header-stripe p {
-            color: rgba(255,255,255,0.65);
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
         }
         .uae-pillars {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1px;
-            background: rgba(255,255,255,0.05);
+            background: var(--border);
         }
         .uae-pillar {
-            background: var(--card-2);
+            background: #FFFFFF;
             padding: 38px;
         }
         .uae-pillar h4 {
-            font-weight: 600;
-            color: var(--cream);
+            font-weight: 700;
+            color: var(--night);
             margin-bottom: 12px;
             font-size: 0.95rem;
             display: flex;
@@ -653,22 +658,20 @@
         .uae-pillar h4::before {
             content: '';
             display: block;
-            width: 7px;
-            height: 7px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            background: var(--gold);
-            flex-shrink: 0;
+            background: var(--bordeaux);
         }
         .uae-pillar p {
-            font-size: 0.88rem;
-            color: var(--muted-light);
+            font-size: 0.92rem;
+            color: var(--body);
             line-height: 1.75;
         }
 
         /* ─── FOOTER ───────────────────────────────── */
         footer {
-            background: #070708;
-            border-top: 1px solid var(--border);
+            background: var(--night);
             padding: 72px 52px 40px;
             margin-top: 140px;
         }
@@ -685,30 +688,28 @@
         .footer-brand h4 {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
-            color: var(--gold);
-            font-style: italic;
+            color: #FFFFFF;
             margin-bottom: 16px;
         }
         .footer-brand p {
-            font-size: 0.87rem;
-            color: var(--muted);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
             line-height: 1.8;
-            max-width: 360px;
+            max-width: 380px;
         }
         .footer-col h5 {
-            font-size: 0.62rem;
+            font-size: 0.65rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--bordeaux-light);
+            color: #FFFFFF;
             margin-bottom: 22px;
             font-weight: 700;
         }
         .footer-col ul { list-style: none; }
         .footer-col li {
-            font-size: 0.86rem;
-            color: var(--muted);
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.5);
             margin-bottom: 10px;
-            line-height: 1.45;
         }
         .footer-bottom {
             max-width: 1240px;
@@ -718,75 +719,36 @@
             align-items: center;
         }
         .footer-bottom p {
-            font-size: 0.78rem;
-            color: #3A3530;
-        }
-        .uae-flag {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .flag-mini {
-            display: flex;
-            height: 13px;
-            border-radius: 2px;
-            overflow: hidden;
-            gap: 0;
-        }
-        .flag-mini .red-bar {
-            width: 7px;
-            background: #CE1126;
-        }
-        .flag-stripes {
-            display: flex;
-            flex-direction: column;
-            width: 24px;
-        }
-        .flag-stripes span:nth-child(1) { background: #00732F; flex: 1; }
-        .flag-stripes span:nth-child(2) { background: #FFFFFF; flex: 1; }
-        .flag-stripes span:nth-child(3) { background: #000000; flex: 1; }
-        .uae-flag span.label {
-            font-size: 0.72rem;
-            color: #3A3530;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
         }
 
         /* ─── RESPONSIVE ───────────────────────────── */
         @media (max-width: 1024px) {
             .hero, nav .nav-inner, .container, footer { padding-left: 32px; padding-right: 32px; }
-            .logo-bar { padding: 12px 32px; }
+            .logo-bar { padding: 16px 32px; }
             .vision-cols { grid-template-columns: 1fr; gap: 48px; }
             .stats-row { grid-template-columns: repeat(2, 1fr); }
-            .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px 240px; }
-            .gallery-item:first-child { grid-row: auto; }
-            .pillars-grid { grid-template-columns: 1fr; background: none; gap: 16px; }
-            .research-card { grid-template-columns: 56px 1fr; }
-            .research-card .research-tag { grid-column: 2; margin-top: 16px; }
-            .timeline-wrapper { grid-template-columns: 1fr; }
-            .partner-grid { grid-template-columns: 1fr 1fr; }
-            .pedagogy-grid { grid-template-columns: 1fr 1fr; }
+            .pillars-grid { grid-template-columns: 1fr; background: none; gap: 16px; border: none; }
+            .pillar-card { border: 1px solid var(--border); border-radius: 8px; }
+            .research-card { grid-template-columns: 1fr; }
             .footer-inner { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .logo-bar { padding: 10px 20px; }
-            .logo-bar img { height: 36px; }
-            .hero, footer { padding-left: 20px; padding-right: 20px; }
+            .logo-bar { padding: 15px 20px; flex-direction: column; gap: 15px; text-align: center; }
+            .logo-bar .suad-logo { height: 40px; }
+            .hero { padding-left: 20px; padding-right: 20px; padding-bottom: 60px; min-height: 80vh; }
             .container { padding: 0 20px; }
             .nav-inner { padding: 0 20px; }
             .nav-links { display: none; }
-            .hero { padding-bottom: 60px; min-height: 80vh; }
             .hero-meta { flex-direction: column; border: none; background: none; }
-            .hero-meta-item { border: 1px solid var(--border); border-radius: 4px; margin-bottom: 8px; }
-            .gallery { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .gallery-item { height: 220px; }
+            .hero-meta-item { border: 1px solid var(--border); border-radius: 4px; margin-bottom: 8px; background: #FFF; }
             .stats-row { grid-template-columns: 1fr 1fr; }
-            .research-card { grid-template-columns: 1fr; }
-            .research-index { font-size: 1.5rem; }
             .partner-grid, .pedagogy-grid { grid-template-columns: 1fr; }
             .uae-pillars { grid-template-columns: 1fr; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; }
-            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
         }
     </style>
 </head>
@@ -794,14 +756,16 @@
 
     <!-- Logo Bar -->
     <div class="logo-bar">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Logo_of_Sorbonne_University.svg/1200px-Logo_of_Sorbonne_University.svg.png" alt="Sorbonne University">
-        <img src="https://asset.brandfetch.io/idZA7HYRWK/idAv7jkEOM.png" alt="Ma Hawa">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpf0oFLPECF64R81C_HRc-wtdDuUAI_xPulg&s" alt="Sorbonne University Abu Dhabi" class="suad-logo">
+        <img src="https://media.licdn.com/dms/image/v2/D4D22AQHPFQ1vZ8wSdw/feedshare-shrink_800/B4DZ2Q6cpEK0Ac-/0/1776252736016?e=2147483647&v=beta&t=3XHaCGBjEli4vW_nJgc_SIQTkB3ZCGd8DUJhIOwZVbw" alt="SAFIR" class="safir-logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9R1jqpP4vpPmZV1K4zOQNnhVcGjuHWoXGQ&s" alt="SCAI" class="scai-logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlz6QW5S2lVI2xqJEIIs8Vo5xf_dATAf7YUw&s" alt="Ma Hawa" class="partner-logo">
     </div>
 
     <!-- Sticky Navigation -->
     <nav>
         <div class="nav-inner">
-            <a href="#top" class="nav-brand">Algorithmic Oasis</a>
+            <a href="#top" class="nav-brand">The AI Research Garden</a>
             <ul class="nav-links">
                 <li><a href="#vision">Vision</a></li>
                 <li><a href="#garden">Garden</a></li>
@@ -816,9 +780,9 @@
     <!-- Hero -->
     <header class="hero" id="top">
         <div class="hero-content">
-            <span class="hero-tag">SAFIR Lab &nbsp;·&nbsp; SCAI &nbsp;·&nbsp; 2026–2028</span>
-            <h1>The <em>Algorithmic</em><br>Oasis</h1>
-            <p class="hero-subtitle">A living laboratory where agentic AI governs the metabolism of desert flora — harvesting water from air, energy from the sun, and training the next generation of interdisciplinary researchers.</p>
+            <span class="hero-tag">SAFIR &nbsp;·&nbsp; SCAI &nbsp;·&nbsp; 2026–2028</span>
+            <h1>The AI Research<br>Garden</h1>
+            <p class="hero-subtitle">An interdisciplinary research platform investigating the integration of autonomous systems with desert ecology. The project explores self-sustaining metabolic cycles through atmospheric water generation and intelligent energy management.</p>
             <div class="hero-meta">
                 <div class="hero-meta-item">
                     <span class="hero-meta-label">Institution</span>
@@ -829,11 +793,11 @@
                     <span class="hero-meta-value">2026 – 2028</span>
                 </div>
                 <div class="hero-meta-item">
-                    <span class="hero-meta-label">Water Source</span>
-                    <span class="hero-meta-value">Ma Hawa AWG Technology</span>
+                    <span class="hero-meta-label">Methodology</span>
+                    <span class="hero-meta-value">Atmospheric Water Generation</span>
                 </div>
                 <div class="hero-meta-item">
-                    <span class="hero-meta-label">Research Focus</span>
+                    <span class="hero-meta-label">Core Focus</span>
                     <span class="hero-meta-value">Eco-Autonomous Intelligence</span>
                 </div>
             </div>
@@ -843,24 +807,24 @@
     <!-- VISION -->
     <section id="vision">
         <div class="container">
-            <p class="section-label">Research Mission</p>
-            <h2 class="section-title">A New Paradigm for<br>Arid-Climate Intelligence</h2>
+            <p class="section-label">Research Mandate</p>
+            <h2 class="section-title">Frameworks for<br>Arid-Climate Intelligence</h2>
             <div class="divider"></div>
 
             <div class="vision-cols">
                 <div class="vision-text">
-                    <p>The <strong>Algorithmic Oasis</strong> pioneers <strong>Eco-Autonomous Intelligence</strong> — a new paradigm where agentic AI systems optimize the complete metabolic cycle of biological life in one of the planet's most demanding environments.</p>
-                    <p>At Sorbonne University Abu Dhabi, we are building a living laboratory where AI agents govern desert flora using water synthesized directly from atmospheric humidity, powered entirely by solar energy. This is not a simulation — it is a functioning, breathing ecosystem steered by intelligence.</p>
-                    <p>The garden's biometric data — soil tension, humidity gradients, water output — feeds a real-time dashboard that makes the invisible visible, bridging environmental science and machine learning in a format accessible to the entire campus community.</p>
-                    <p>Three student research teams — Sensors &amp; Data, Energy &amp; Water, AI &amp; Modelling — collaborate in a format that mirrors professional R&amp;D environments, producing outcomes with direct relevance to the UAE's national sustainability agenda.</p>
+                    <p>The <strong>The AI Research Garden</strong> advances the field of <strong>Eco-Autonomous Intelligence</strong> — a research framework where autonomous control systems optimize the metabolic requirements of biological life within extreme arid environments.</p>
+                    <p>At Sorbonne University Abu Dhabi, this facility serves as a primary site for validating the efficacy of algorithmic governance over desert flora. By utilizing synthesized atmospheric humidity and photovoltaic energy, the project demonstrates a closed-loop ecosystem managed through real-time computational modelling.</p>
+                    <p>The platform's environmental data — including soil matric potential, humidity gradients, and hygroscopic output — is integrated into a comprehensive monitoring system. This infrastructure bridges environmental science and machine learning, providing a robust dataset for empirical analysis.</p>
+                    <p>Three specialized research teams — Sensors &amp; Data, Energy &amp; Water, and AI &amp; Modelling — operate within a structure that emulates advanced R&amp;D environments, ensuring that pedagogical outcomes align with the UAE's strategic sustainability objectives.</p>
                 </div>
                 <div>
                     <div class="vision-quote">
-                        <blockquote>"Teaching machines to sustain life in the desert is not merely an engineering challenge — it is a philosophical commitment to the future of our planet."</blockquote>
-                        <cite>SAFIR Lab &nbsp;·&nbsp; Sorbonne University Abu Dhabi</cite>
+                        <blockquote>"The development of autonomous systems capable of sustaining biological life in extreme environments represents a critical intersection of ecological engineering and computational intelligence."</blockquote>
+                        <cite>SAFIR &nbsp;·&nbsp; Sorbonne University Abu Dhabi</cite>
                     </div>
                     <div class="vision-quote" style="border-left-color: var(--oasis-light);">
-                        <blockquote>"The desert does not forgive approximation. That is precisely why it is the ideal laboratory for intelligence."</blockquote>
+                        <blockquote>"Arid environments serve as a rigorous validation ground for autonomous systems, where metabolic success is directly contingent upon operational precision."</blockquote>
                         <cite>SCAI &nbsp;·&nbsp; Sorbonne Center for Artificial Intelligence</cite>
                     </div>
                 </div>
@@ -918,20 +882,20 @@
     <!-- TECHNOLOGY PILLARS -->
     <section id="technology">
         <div class="container">
-            <p class="section-label">Core Systems</p>
-            <h2 class="section-title">Three Technology Pillars</h2>
+            <p class="section-label">System Architecture</p>
+            <h2 class="section-title">Core Technological Domains</h2>
             <div class="divider"></div>
-            <p class="section-lead">The Algorithmic Oasis is built on three pillars: autonomous water production, intelligent energy management, and a research studio that trains students to work fluently across disciplines — each one essential to the whole.</p>
+            <p class="section-lead">The AI Research Garden integrates three critical domains: autonomous water production, intelligent energy management, and an interdisciplinary pedagogical framework — each essential to the facility's operation.</p>
 
             <div class="pillars-grid">
                 <div class="pillar-card">
                     <span class="pillar-number">01</span>
                     <div class="pillar-icon">💧</div>
-                    <h3>Water Synthesis</h3>
-                    <p>Utilizing <strong>Ma Hawa</strong> AWG technology to extract up to 30 litres of pure water daily from atmospheric humidity — with zero reliance on ground or mains supply. The <strong>Predictive Thirst (PT) algorithm</strong> determines optimal production windows to minimize energy expenditure during peak heat events.</p>
+                    <h3>Atmospheric Water Synthesis</h3>
+                    <p>Utilizing <strong>Ma Hawa</strong> AWG technology to extract pure water from atmospheric humidity, eliminating reliance on local groundwater or municipal supply. The <strong>Predictive Thirst (PT) model</strong> optimizes production cycles based on ambient conditions to maximize energy efficiency.</p>
                     <div class="progress-meta">
-                        <span>Readiness</span>
-                        <span>Phase 1 Active</span>
+                        <span>Status</span>
+                        <span>Phase 1 Implementation</span>
                     </div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 85%;"></div>
@@ -941,11 +905,11 @@
                 <div class="pillar-card">
                     <span class="pillar-number">02</span>
                     <div class="pillar-icon">☀️</div>
-                    <h3>Solar Intelligence</h3>
-                    <p>A dynamic power management layer using <strong>BigBlue</strong> solar panels and IP67-rated <strong>ELECOM</strong> battery systems. An energy AI agent schedules production cycles around irradiance forecasts and dust-storm events, ensuring 24/7 sensor and irrigation autonomy throughout the year.</p>
+                    <h3>Energy Optimization</h3>
+                    <p>A dynamic power management layer utilizing <strong>BigBlue</strong> photovoltaics and high-capacity storage systems. An energy management agent schedules operational cycles based on irradiance forecasts and local meteorological events to ensure system autonomy.</p>
                     <div class="progress-meta">
-                        <span>Readiness</span>
-                        <span>Phase 1–2</span>
+                        <span>Status</span>
+                        <span>System Integration</span>
                     </div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 50%;"></div>
@@ -955,11 +919,11 @@
                 <div class="pillar-card">
                     <span class="pillar-number">03</span>
                     <div class="pillar-icon">🎓</div>
-                    <h3>Interdisciplinary Research Studio</h3>
-                    <p>The project is itself a pedagogical architecture. Students from Computer Science, Physics, and the Arts work side by side on a single live system — each bringing a non-redundant perspective. The engineer builds the sensor circuit; the physicist models thermal evapotranspiration; the humanist interrogates what the data means for desert ecology. This cross-domain fluency is the project's most durable output.</p>
+                    <h3>Pedagogical Architecture</h3>
+                    <p>The project functions as a pedagogical framework where students from Computer Science, Physics, and the Humanities collaborate on a shared autonomous system. This model facilitates cross-domain fluency, preparing researchers to navigate the complexities of real-world environmental deployments.</p>
                     <div class="progress-meta">
-                        <span>Continuous</span>
-                        <span>Years 1 &amp; 2</span>
+                        <span>Status</span>
+                        <span>Ongoing</span>
                     </div>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 100%;"></div>
@@ -973,16 +937,16 @@
     <section id="research">
         <div class="container">
             <p class="section-label">Academic Contribution</p>
-            <h2 class="section-title">Research Outputs</h2>
+            <h2 class="section-title">Research Outputs &amp; Contributions</h2>
             <div class="divider"></div>
-            <p class="section-lead">Three peer-reviewed research pillars — from AI irrigation systems to interdisciplinary pedagogy — each contributing to the emerging field of sustainable AI in extreme environments.</p>
+            <p class="section-lead">The project targets three peer-reviewed pillars, contributing empirical data and methodological frameworks to the fields of sustainable AI and environmental physics.</p>
 
             <div class="research-list">
                 <div class="research-card">
                     <div class="research-index">A</div>
                     <div class="research-body">
-                        <h3>Autonomous Resource Management — The PT Algorithm</h3>
-                        <p>Development of the <strong>Predictive Thirst (PT) Algorithm</strong>: a Reinforcement Learning framework that balances plant biological needs with high-cost water production energy profiles under extreme heat. This work advances the state of the art in agentic AI applied to ecological systems. Target: <em>IEEE Internet of Things Journal</em> or <em>Journal of Cleaner Production</em>.</p>
+                        <h3>Autonomous Resource Optimization — The PT Model</h3>
+                        <p>Development of the <strong>Predictive Thirst (PT) Framework</strong>: a Reinforcement Learning approach that balances biological hydration requirements with energy-intensive water production in extreme thermal conditions. Target: <em>IEEE Internet of Things Journal</em> or <em>Journal of Cleaner Production</em>.</p>
                     </div>
                     <span class="research-tag">AI &amp; IoT</span>
                 </div>
@@ -990,8 +954,8 @@
                 <div class="research-card">
                     <div class="research-index">B</div>
                     <div class="research-body">
-                        <h3>AWG Performance in Hyper-Arid Coastal Climates</h3>
-                        <p>Data-driven performance mapping of the <strong>Ma Hawa Mobile Box</strong> under variable solar irradiance in Abu Dhabi's hyper-arid coastal climate — generating the first long-term AWG efficiency dataset for this region and contributing to decentralized water production models for the Gulf. Target: <em>Energy and Buildings</em> or <em>Sustainable Cities and Society</em>.</p>
+                        <h3>AWG Efficiency in Hyper-Arid Coastal Climates</h3>
+                        <p>Quantifying the performance of <strong>Ma Hawa</strong> AWG systems under variable solar irradiance in Abu Dhabi. This study generates the first long-term efficiency dataset for decentralized water production in the Gulf region. Target: <em>Energy and Buildings</em> or <em>Sustainable Cities and Society</em>.</p>
                     </div>
                     <span class="research-tag">Sustainability</span>
                 </div>
@@ -999,8 +963,8 @@
                 <div class="research-card">
                     <div class="research-index">C</div>
                     <div class="research-body">
-                        <h3>Interdisciplinary Research by Design</h3>
-                        <p>A methodological contribution: documenting and evaluating the <strong>"Oasis Squad" model</strong> — a team structure that deliberately integrates students from CS, Physics, and the Arts around a single complex environmental system. The research asks whether cross-domain teams produce more robust AI systems in ambiguous, real-world deployments than single-discipline groups. Target: <em>Journal of Engineering Education</em> or <em>Computers &amp; Education</em>.</p>
+                        <h3>Interdisciplinary Methodology by Design</h3>
+                        <p>A methodological evaluation of the <strong>collaborative research model</strong> — assessing the integration of CS, Physics, and Arts students within complex environmental systems. The research investigates whether interdisciplinary teams produce more resilient autonomous systems. Target: <em>Journal of Engineering Education</em>.</p>
                     </div>
                     <span class="research-tag">Pedagogy</span>
                 </div>
@@ -1011,26 +975,26 @@
     <!-- PEDAGOGY -->
     <section>
         <div class="container">
-            <p class="section-label">Student Impact</p>
-            <h2 class="section-title">Pedagogical Outcomes</h2>
+            <p class="section-label">Impact Assessment</p>
+            <h2 class="section-title">Institutional &amp; Pedagogical Impact</h2>
             <div class="divider"></div>
-            <p class="section-lead">The Algorithmic Oasis is a research environment designed as much for the formation of future researchers as for the production of knowledge.</p>
+            <p class="section-lead">The AI Research Garden is designed to facilitate the formation of specialized researchers through hands-on engagement with advanced autonomous technologies.</p>
 
             <div class="pedagogy-grid">
                 <div class="pedagogy-card">
-                    <p class="label">Research Format</p>
-                    <h3>The Oasis Squad</h3>
-                    <p>Five to six students organized into three paired research teams — Sensors &amp; Data, Energy &amp; Water, AI &amp; Modelling — each responsible for one pillar of the system, collaborating under a shared research agenda.</p>
+                    <p class="label">Structure</p>
+                    <h3>Collaborative Framework</h3>
+                    <p>Organized into specialized research teams — Sensors &amp; Data, Energy &amp; Water, and AI &amp; Modelling — students collaborate under a shared agenda, mirroring the structure of professional research laboratories.</p>
                 </div>
                 <div class="pedagogy-card">
-                    <p class="label">Academic Output</p>
-                    <h3>Master's Thesis Support</h3>
-                    <p>At least three Master's theses directly supported across Applied AI, Environmental Physics, and Human-Computer Interaction — with the project integrated into the SUAD Computer Science curriculum as a multi-year undergraduate capstone.</p>
+                    <p class="label">Output</p>
+                    <h3>Graduate Research Support</h3>
+                    <p>Providing the empirical basis for Master's theses across Applied AI, Environmental Physics, and Human-Computer Interaction, while serving as a capstone project for the SUAD Computer Science curriculum.</p>
                 </div>
                 <div class="pedagogy-card">
-                    <p class="label">Extreme Deployment</p>
-                    <h3>Real-World IoT Engineering</h3>
-                    <p>Students gain hands-on experience deploying hardware in conditions of 50°C summer peaks, high coastal humidity, and dust-storm interference — competencies that map directly to regional industry demand for resilient IoT engineers.</p>
+                    <p class="label">Competencies</p>
+                    <h3>Resilient Systems Engineering</h3>
+                    <p>Practical experience in deploying hardware within extreme environments (50°C summer peaks, high humidity, and dust-storm interference), developing competencies essential for the regional IoT sector.</p>
                 </div>
             </div>
         </div>
@@ -1069,7 +1033,7 @@
                                 <li>Real-time data dashboard (web-based, open to campus)</li>
                                 <li>First fully autonomous indoor prototype (V1)</li>
                                 <li>Open-source Python AWG optimization library</li>
-                                <li>Year 1 interim report to SAFIR Lab Committee</li>
+                                <li>Year 1 interim report to SAFIR Committee</li>
                             </ul>
                         </div>
                     </div>
@@ -1116,17 +1080,23 @@
 
             <div class="partner-grid">
                 <div class="partner-card">
-                    <div class="partner-icon" style="background: rgba(139, 26, 47, 0.18);">🏛️</div>
-                    <h3>SAFIR Lab</h3>
-                    <p>The Sorbonne AI &amp; Future Intelligence Research laboratory at SUAD — providing the computational foundations, reinforcement learning expertise, and institutional framework for the project's autonomous systems.</p>
+                    <div class="partner-logo-container">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQHPFQ1vZ8wSdw/feedshare-shrink_800/B4DZ2Q6cpEK0Ac-/0/1776252736016?e=2147483647&v=beta&t=3XHaCGBjEli4vW_nJgc_SIQTkB3ZCGd8DUJhIOwZVbw" alt="SAFIR">
+                    </div>
+                    <h3>SAFIR</h3>
+                    <p>The Sorbonne Abu Dhabi for Innovation and Research (SAFIR) is the university's multidisciplinary research hub. Grounded in interdisciplinarity, SAFIR brings together diverse fields of inquiry to address the complex realities shaping Abu Dhabi and the UAE.</p>
                 </div>
                 <div class="partner-card">
-                    <div class="partner-icon" style="background: rgba(42, 92, 69, 0.18);">🔬</div>
+                    <div class="partner-logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9R1jqpP4vpPmZV1K4zOQNnhVcGjuHWoXGQ&s" alt="SCAI">
+                    </div>
                     <h3>SCAI</h3>
                     <p>The Sorbonne Center for Artificial Intelligence — contributing cross-disciplinary research expertise, co-designing the interdisciplinary student curriculum, and shaping the human-centred dimensions of the AI-nature interface.</p>
                 </div>
                 <div class="partner-card">
-                    <div class="partner-icon" style="background: rgba(201, 146, 58, 0.18);">💧</div>
+                    <div class="partner-logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlz6QW5S2lVI2xqJEIIs8Vo5xf_dATAf7YUw&s" alt="Ma Hawa">
+                    </div>
                     <h3>Ma Hawa</h3>
                     <p>The UAE's pioneer in Atmospheric Water Generation technology — providing the critical hardware that makes water-from-air production viable in the Gulf climate, and a strategic partner in commercializing the project's findings.</p>
                 </div>
@@ -1136,7 +1106,15 @@
             <div class="uae-block">
                 <div class="uae-header-stripe">
                     <p class="eyebrow">National Alignment</p>
-                    <h3>UAE AI Strategy 2031 &amp; Net Zero 2050</h3>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 12px;">
+                        <div class="flag-mini" style="height: 20px; width: 34px; flex-shrink: 0;">
+                            <div class="red-bar" style="width: 10px;"></div>
+                            <div class="flag-stripes" style="width: 24px;">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <h3 style="margin: 0;">UAE AI Strategy 2031 &amp; Net Zero 2050</h3>
+                    </div>
                     <p>Directly contributing to the nation's vision for a sustainable, knowledge-driven economy</p>
                 </div>
                 <div class="uae-pillars">
@@ -1165,8 +1143,8 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-brand">
-                <h4>Algorithmic Oasis</h4>
-                <p>A joint initiative of SAFIR Lab and SCAI at Sorbonne University Abu Dhabi, in strategic partnership with Ma Hawa — pioneering Eco-Autonomous Intelligence and cross-domain research training in hyper-arid environments, 2026–2028.</p>
+                <h4>The AI Research Garden</h4>
+                <p>A joint initiative of SAFIR and SCAI at Sorbonne University Abu Dhabi, in strategic partnership with Ma Hawa — pioneering Eco-Autonomous Intelligence and cross-domain research training in hyper-arid environments, 2026–2028.</p>
                 <p style="margin-top: 20px; font-size: 0.8rem; color: var(--muted);">
                     <span style="display: block; font-size: 0.6rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--bordeaux-light); margin-bottom: 8px;">Project Coordination</span>
                     Xavier Fresquet<br>
@@ -1188,14 +1166,14 @@
                 <h5>Institutions</h5>
                 <ul>
                     <li>Sorbonne University Abu Dhabi</li>
-                    <li>SAFIR Lab</li>
+                    <li>SAFIR</li>
                     <li>SCAI — Sorbonne Center for Artificial Intelligence</li>
                     <li>Ma Hawa AWG Technology</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 SAFIR Lab &amp; SCAI — Sorbonne University Abu Dhabi. All rights reserved. &nbsp;·&nbsp; Project coordinated by <strong style="color: var(--muted-light);">Xavier Fresquet</strong>, <a href="mailto:safaa.elsayed@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Safaa El Sayed</a> &amp; <a href="mailto:beatriz.garcia@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Beatriz Garcia</a></p>
+            <p>© 2026 SAFIR &amp; SCAI — Sorbonne University Abu Dhabi. All rights reserved. &nbsp;·&nbsp; Project coordinated by <strong style="color: var(--muted-light);">Xavier Fresquet</strong>, <a href="mailto:safaa.elsayed@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Safaa El Sayed</a> &amp; <a href="mailto:beatriz.garcia@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Beatriz Garcia</a></p>
             <div class="uae-flag">
                 <div class="flag-mini">
                     <div class="red-bar"></div>
