@@ -1,95 +1,67 @@
-# Project Schedule — Algorithmic Oasis
-**SUAD AI Research Garden · 2026–2028**  
-**Affiliations:** SAFIR Lab · SCAI · Sorbonne University Abu Dhabi
+<p align="center">
+  <img src="logo_suad.png" width="200" />
+  <img src="logo_safir.jpg" width="180" />
+  <img src="logo_scai.jpg" width="160" />
+</p>
+
+# PROJECT SCHEDULE: Algorithmic Oasis (2026–2028)
+**Research Portal:** [captaldebuch.github.io/algorithmic-oasis/](https://captaldebuch.github.io/algorithmic-oasis/)  
+**Coordination:** SAFIR Lab · SCAI · Sorbonne University Abu Dhabi
 
 ---
 
-## Overview
+## 1. Master Timeline Overview
+The project is structured as a **24-month longitudinal study**, progressing from controlled indoor metabolism modelling to fully autonomous outdoor ecological governance.
 
-The project runs across **two academic years**, progressing from controlled indoor experimentation to a fully autonomous outdoor installation. Each phase ends with a defined deliverable that gates entry to the next phase.
-
-| Year | Theme | Key Outcome |
-| :--- | :--- | :--- |
-| Year 1 (2026–2027) | Foundation & Digital Metabolism | Indoor autonomous irrigation prototype + Year 1 Report |
-| Year 2 (2027–2028) | Resilience & Autonomous Chorus | Outdoor autonomous garden + public concert + publications |
-
----
-
-## Year 1 — Foundation & Digital Metabolism (2026–2027)
-
-### Phase 1: Lab Setup & Sensory Backbone
-**September – December 2026 · Lead: Sensors & Data Team + Energy & Water Team**
-
-| Milestone | Description | Owner |
-| :--- | :--- | :--- |
-| **M1 — Oasis Squad** | Recruit and onboard 5–6 students into three research pairs | SAFIR Lab |
-| **M2 — Hardware Audit** | Full calibration test of Ma Hawa GENNY, APKLVSR sensors, and ELECOM power systems | Sensors & Data |
-| **M3 — ESP32 Integration** | Flash firmware on 5× ESP32-S3 units; verify 5V sensor stability | Sensors & Data |
-| **M4 — Data Pipeline** | MQTT broker setup, cloud time-series ingestion, real-time monitoring dashboard | AI & Modelling |
-| **M5 — Water Control** | Design and deploy micro-pump + solenoid valve irrigation circuit | Energy & Water |
-
-**Phase Gate:** Live data visible on dashboard from at least 3 plant nodes. Water dispensing automated via sensor threshold.
+| Phase | Academic Year | Strategic Theme | Milestone |
+| :--- | :--- | :--- | :--- |
+| **Phase 1** | 2026–2027 | Foundation & Digital Metabolism | Indoor Prototype (V1.0) |
+| **Phase 2** | 2027–2028 | Resilience & Autonomous Chorus | Outdoor Installation & Publication |
 
 ---
 
-### Phase 2: The Living Prototype
-**January – May 2027 · Lead: AI & Modelling Team + SCAI**
+## 2. Phase 1 — Digital Metabolism (Sept 2026 – May 2027)
 
-| Milestone | Description | Owner |
-| :--- | :--- | :--- |
-| **M6 — PT Algorithm V0.1** | First RL training run on simulated data; baseline irrigation policy established | AI & Modelling |
-| **M7 — Cross-Domain Sprint** | Structured 2-week collaborative sprint: each team solves a problem outside their domain | SCAI |
-| **M8 — Indoor Prototype V1** | First fully integrated prototype: sensor → AI decision → automated watering | All teams |
-| **M9 — Open-Source Lib V0.1** | Python AWG optimization library published on GitHub | AI & Modelling |
-| **M10 — Year 1 Report** | Interim findings and team performance assessment presented to SAFIR Lab Committee | All teams |
+### WP1: Infrastructure, "OASIS Alpha" & P0 Bench (Sept – Dec 2026)
+- **Recruitment:** Onboarding the "Oasis Squad" (6 students) into transdisciplinary research pairs.
+- **OASIS Alpha & P0 Sorption Bench (Intensive Prototyping):** 
+  - *Week 1 (Sense & Matrix):* Build 12 plant mini-lysimeters + 10 Sorption coupons (P0 Matrix Selection: Cellulose, Alginate, Vermiculite, Foam, Silica) on 1kg load cells.
+  - *Week 2 (Water Balance):* Measure real Evapotranspiration (ET) in closed loop; calculate hourly sorption kinetics ($dm/dt$) against instantaneous dew point.
+  - *Week 3 (Learn/Control):* Build physical scheduler based on ET prediction; compare 3 AWG logic pathways.
+  - *Week 4 (Simulation):* Build "Digital Twin" sweeping virtual GEN-M1 and PV parameters to optimize sizing.
+- **Architecture:** Deployment of the local Raspberry Pi edge-controller and single psychrometric data logging pipeline.
 
-**Phase Gate:** Integrated indoor prototype demonstrated live to SAFIR Lab Committee. Year 1 Report accepted.
-
----
-
-## Year 2 — Resilience & The Autonomous Chorus (2027–2028)
-
-### Phase 3: Outdoor Hardening & Energy AI
-**September – December 2027 · Lead: Energy & Water Team + AI & Modelling Team**
-
-| Milestone | Description | Owner |
-| :--- | :--- | :--- |
-| **M11 — Outdoor Installation** | Ma Hawa Mobile Box + 200W solar array + LiFePO4 battery deployed in SUAD garden | Energy & Water |
-| **M12 — RL Agent Training** | PT Algorithm trained on real outdoor data; energy-water trade-off optimization | AI & Modelling |
-| **M13 — Stress Testing** | System evaluation during Abu Dhabi's Sept–Oct heat transition (peak 50°C) | All teams |
-| **M14 — Connectivity** | 4G/LTE IoT gateway online; remote monitoring and intervention capability | AI & Modelling |
-| **M15 — Skills Assessment** | Mid-project evaluation of cross-domain competency growth per student (data for Pillar C) | SCAI |
-
-**Phase Gate:** System runs autonomously for 30 consecutive days without human intervention. All sensor data logged without gaps.
+### WP2: The Living Prototype & P1 Integration (Jan – May 2027)
+- **Data Maturation & P1 Execution:** Collecting robust, long-term ET and AWG data. If P0 passes criteria (≥0.4g/g), deploy **P1 Closed-Cycle Solar Sorption** unit (0.25 m², <30 mg/L Cl⁻ target).
+- **Modelling:** Training the "Predictive Thirst" (PT) machine learning algorithm on the highly accurate mini-lysimeter and sorption datasets.
+- **Long-Term Durability Test:** Launch 12-month passive outdoor bench (weekly manual weighing) to measure sorbent degradation (dust, salt migration).
+- **Integration:** Assembly of the fully autonomous indoor ecosystem (V1.0), preparing to integrate the real Ma Hawa AWG.
+- **Interim Report:** Submission of Phase 1 findings to the SAFIR Research Committee.
 
 ---
 
-### Phase 4: The Resonant Garden
-**January – June 2028 · Lead: All Teams + SAFIR Lab**
+## 3. Phase 2 — Resilience & Autonomy (Sept 2027 – June 2028)
 
-| Milestone | Description | Owner |
-| :--- | :--- | :--- |
-| **M16 — Public Dashboard** | Web/mobile interface launched for campus-wide data visibility | AI & Modelling |
-| **M17 — Research Symposium** | Public interdisciplinary symposium: students present findings across domains to SUAD community | SCAI |
-| **M18 — Paper Submissions** | Three research papers submitted to target journals (see RESEARCH_OUTCOMES.md) | All teams |
-| **M19 — Thesis Defences** | 3+ Master's theses submitted and defended | Students |
-| **M20 — Open Release** | Full software stack (PT Algorithm + Eco-Acoustic Engine) published open-source | AI & Modelling |
+### WP3: Field Hardening & Energy AI (Sept – Dec 2027)
+- **Deployment:** Transposing the system to the campus garden with solar integration.
+- **Optimization:** RL training for energy-water trade-offs in hyper-arid conditions.
+- **Stress Testing:** System evaluation during the Abu Dhabi thermal peak (50°C+).
 
-**Phase Gate:** Minimum two paper submissions accepted or under peer review. Master's theses submitted.
-
----
-
-## Team Structure
-
-| Team | Members | Primary Responsibility |
-| :--- | :--- | :--- |
-| **Sensors & Data** | 2 students | Arduino/ESP32 integration, APKLVSR calibration, data quality |
-| **Energy & Water** | 2 students | ELECOM battery management, Ma Hawa integration, energy balance |
-| **AI & Modelling** | 1–2 students | PT Algorithm, sonification engine, cloud pipeline |
-| **Research Supervision** | SAFIR Lab + SCAI | Academic guidance, publication, institutional liaison |
+### WP4: Dissemination & The Resonant Garden (Jan – June 2028)
+- **Public Outreach:** Launch of the campus-wide real-time data portal.
+- **Scholarly Submission:** Finalization and submission of three research papers (IEEE/SCS).
+- **Thesis Defence:** Support for 3+ Master's theses within the Algorithmic Oasis framework.
 
 ---
 
-*Document Version: 2.0 (June 2026)*  
-*Last Updated: June 2026*  
-*Status: Phase 1 begins September 2026*
+## 4. Research Coordination Team
+
+| Domain | Responsible Party |
+| :--- | :--- |
+| **Principal Coordinator** | **Dr. Xavier Fresquet** (Head of SCAI) |
+| **Computational Lead** | **Safaa El Sayed** (Mathematics Department) |
+| **Sustainability Lead** | **Dr. Beatriz Garcia** (Sustainability Officer) |
+
+---
+*Document Version: 3.0 (Academic Revision)*  
+*Last Updated: June 5, 2026*  

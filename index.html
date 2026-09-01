@@ -828,15 +828,44 @@
             .footer-inner { grid-template-columns: 1fr; gap: 40px; }
             .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
         }
+
+        /* UAE FLAG COMPONENTS */
+        .flag-mini {
+            display: flex;
+            width: 34px;
+            height: 20px;
+            overflow: hidden;
+            border-radius: 1px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .flag-mini .red-bar {
+            width: 25%;
+            height: 100%;
+            background: #FF0000;
+        }
+        .flag-mini .flag-stripes {
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            height: 100%;
+        }
+        .flag-mini .flag-stripes span {
+            height: 33.33%;
+            width: 100%;
+        }
+        .flag-mini .flag-stripes span:nth-child(1) { background: #00732F; }
+        .flag-mini .flag-stripes span:nth-child(2) { background: #FFFFFF; }
+        .flag-mini .flag-stripes span:nth-child(3) { background: #000000; }
+        .uae-flag { display: flex; align-items: center; gap: 12px; }
     </style>
 </head>
 <body>
 
     <!-- Logo Bar -->
     <div class="logo-bar">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpf0oFLPECF64R81C_HRc-wtdDuUAI_xPulg&s" alt="Sorbonne University Abu Dhabi" class="suad-logo">
-        <img src="https://media.licdn.com/dms/image/v2/D4D22AQHPFQ1vZ8wSdw/feedshare-shrink_800/B4DZ2Q6cpEK0Ac-/0/1776252736016?e=2147483647&v=beta&t=3XHaCGBjEli4vW_nJgc_SIQTkB3ZCGd8DUJhIOwZVbw" alt="SAFIR" class="safir-logo">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB9R1jqpP4vpPmZV1K4zOQNnhVcGjuHWoXGQ&s" alt="SCAI" class="scai-logo">
+        <img src="logo_suad.png" alt="Sorbonne University Abu Dhabi" class="suad-logo">
+        <img src="logo_safir.jpg" alt="SAFIR" class="safir-logo">
+        <img src="logo_scai.jpg" alt="SCAI" class="scai-logo">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlz6QW5S2lVI2xqJEIIs8Vo5xf_dATAf7YUw&s" alt="Ma Hawa" class="partner-logo">
     </div>
 
@@ -851,6 +880,7 @@
                 <li><a href="#research">Research</a></li>
                 <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#partners">Partners</a></li>
+                <li><a href="https://captaldebuch.github.io/algorithmic-oasis/" style="color: var(--bordeaux);">Live Page</a></li>
             </ul>
         </div>
     </nav>
@@ -860,7 +890,7 @@
         <div class="hero-content">
             <span class="hero-tag">SAFIR &nbsp;·&nbsp; SCAI &nbsp;·&nbsp; 2026–2028</span>
             <h1>The AI Research<br>Garden</h1>
-            <p class="hero-subtitle">An interdisciplinary research platform investigating the integration of autonomous systems with desert ecology. The project explores self-sustaining metabolic cycles through atmospheric water generation and intelligent energy management.</p>
+            <p class="hero-subtitle">A "Living Laboratory" creating an autonomous irrigation testbed that captures water directly from the air and building condensates. Managed by AI and maintained by students, this garden validates decentralized water solutions for off-grid ecological restoration in desert climates.</p>
             <div class="hero-meta">
                 <div class="hero-meta-item">
                     <span class="hero-meta-label">Institution</span>
@@ -891,10 +921,9 @@
 
             <div class="vision-cols">
                 <div class="vision-text">
-                    <p>The <strong>AI Research Garden</strong> advances the field of <strong>Eco-Autonomous Intelligence</strong> — a research framework where autonomous control systems optimize the metabolic requirements of biological life within extreme arid environments.</p>
-                    <p>At Sorbonne University Abu Dhabi, this facility serves as a primary site for validating the efficacy of algorithmic governance over desert flora. By utilizing synthesized atmospheric humidity and photovoltaic energy, the project demonstrates a closed-loop ecosystem managed through real-time computational modelling.</p>
-                    <p>The platform's environmental data — including soil matric potential, humidity gradients, and hygroscopic output — is integrated into a comprehensive monitoring system. This infrastructure bridges environmental science and machine learning, providing a robust dataset for empirical analysis.</p>
-                    <p>Three specialized research teams — Sensors &amp; Data, Energy &amp; Water, and AI &amp; Modelling — operate within a structure that emulates advanced R&amp;D environments, ensuring that pedagogical outcomes align with the UAE's strategic sustainability objectives.</p>
+                    <p>The <strong>AI Research Garden</strong> project creates a small, smart irrigation system that captures water directly from the air using Atmospheric Water Generation (AWG) technology. Managed and monitored by AI, the system autonomously waters the plants in the campus garden based on real-time environmental data.</p>
+                    <p>This "Living Laboratory" at Sorbonne University Abu Dhabi involves interdisciplinary student teams (Mathematics, Physics, Ecology) who lead the research and maintenance, demonstrating how autonomous technology can support urban sustainability in desert climates like Abu Dhabi.</p>
+                    <p>By harvesting water from the atmosphere and power from the sun, the project eliminates reliance on traditional water grids. The platform's environmental data — including soil moisture and humidity — is integrated into a monitoring system that bridges ecological engineering and computational intelligence.</p>
                 </div>
                 <div>
                     <div class="vision-quote">
@@ -920,8 +949,8 @@
 
             <div class="stats-row">
                 <div class="stat-item">
-                    <span class="stat-number">30L</span>
-                    <span class="stat-label">Daily water yield from air</span>
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">AWG pathways compared</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">50°C</span>
@@ -1005,9 +1034,9 @@
             <div class="pillars-grid">
                 <div class="pillar-card">
                     <span class="pillar-number">01</span>
-                    <div class="pillar-icon">💧</div>
-                    <h3>Atmospheric Water Synthesis</h3>
-                    <p>Utilizing <strong>Ma Hawa</strong> AWG technology to extract pure water from atmospheric humidity, eliminating reliance on local groundwater or municipal supply. The <strong>Predictive Thirst (PT) model</strong> optimizes production cycles based on ambient conditions to maximize energy efficiency.</p>
+                    <span class="pillar-icon">💧</span>
+                    <h3>The Value Cascade</h3>
+                    <p>Comparing three atmospheric water generation pathways (Compression, Solar Sorption, and HVAC Condensate) under a unified psychrometric record. The systems are physically linked, utilizing the AWG's rejected heat to regenerate the sorption bench, maximizing the value of every kW.</p>
                     <div class="progress-meta">
                         <span>Status</span>
                         <span>Phase 1 Implementation</span>
@@ -1019,9 +1048,9 @@
 
                 <div class="pillar-card">
                     <span class="pillar-number">02</span>
-                    <div class="pillar-icon">☀️</div>
-                    <h3>Energy Optimization</h3>
-                    <p>A dynamic power management layer utilizing <strong>BigBlue</strong> photovoltaics and high-capacity storage systems. An energy management agent schedules operational cycles based on irradiance forecasts and local meteorological events to ensure system autonomy.</p>
+                    <span class="pillar-icon">☀️</span>
+                    <h3>Predictive Thirst Framework</h3>
+                    <p>A dynamic power and water management layer. Using continuous gravimetric mini-lysimetry to establish a strict physical baseline for plant evapotranspiration (ET), the AI agent schedules irrigation cycles based on the real-time cost of water and ambient thermodynamics.</p>
                     <div class="progress-meta">
                         <span>Status</span>
                         <span>System Integration</span>
@@ -1070,17 +1099,17 @@
                 <div class="research-card">
                     <div class="research-index">A</div>
                     <div class="research-body">
-                        <h3>Autonomous Resource Optimization — The PT Model</h3>
-                        <p>Development of the <strong>Predictive Thirst (PT) Framework</strong>: a Reinforcement Learning approach that balances biological hydration requirements with energy-intensive water production in extreme thermal conditions. Target: <em>IEEE Internet of Things Journal</em> or <em>Journal of Cleaner Production</em>.</p>
+                        <h3>Physical Lysimetry & The "Barjeel" Architecture</h3>
+                        <p>Establishing a validated physical evapotranspiration (ET) model using continuous gravimetric mini-lysimeters. The system's physical design adopts a thermodynamically driven *barjeel* form to manage heat rejection, utilizing physical UI (dual water columns) to transparently compare the energy cost of condensate versus AWG water. Target: <em>IEEE Internet of Things Journal</em>.</p>
                     </div>
-                    <span class="research-tag">AI &amp; IoT</span>
+                    <span class="research-tag">AI &amp; Engineering</span>
                 </div>
 
                 <div class="research-card">
                     <div class="research-index">B</div>
                     <div class="research-body">
-                        <h3>AWG Efficiency in Hyper-Arid Coastal Climates</h3>
-                        <p>Quantifying the performance of <strong>Ma Hawa</strong> AWG systems under variable solar irradiance in Abu Dhabi. This study generates the first long-term efficiency dataset for decentralized water production in the Gulf region. Target: <em>Energy and Buildings</em> or <em>Sustainable Cities and Society</em>.</p>
+                        <h3>AWG Performance Atlas & Value Cascade</h3>
+                        <p>Quantifying a three-way comparative performance mapping of AWG technology (Compression, Sorption, Condensate) in the UAE. This study generates a definitive field dataset, yielding metrics such as real Specific Energy Consumption (SEC) vs. dew point, and positioning AWG against off-grid trucked water. Target: <em>Energy and Buildings</em>.</p>
                     </div>
                     <span class="research-tag">Sustainability</span>
                 </div>
@@ -1145,19 +1174,19 @@
                             <h4>Phase 1 — Lab Setup &amp; Sensory Backbone</h4>
                             <ul class="milestone-list">
                                 <li>Selection of 5–6 member Oasis Squad</li>
-                                <li>Full testing of Ma Hawa GENNY indoor unit</li>
-                                <li>APKLVSR soil sensor calibration (per species)</li>
-                                <li>ESP32 microcontroller integration</li>
-                                <li>MQTT / Cloud real-time monitoring pipeline</li>
+                                <li>Build continuous gravimetric mini-lysimeters</li>
+                                <li>P0 Sorption AWG Matrix Selection & HVAC Condensate counting</li>
+                                <li>ESP32 microcontroller integration & water balance calibration</li>
+                                <li>Digital Twin simulation & optimization</li>
                             </ul>
                         </div>
                         <div class="timeline-phase">
                             <p class="phase-period">January – May 2027</p>
                             <h4>Phase 2 — The Sonified Biosphere</h4>
                             <ul class="milestone-list">
-                                <li>Real-time data dashboard (web-based, open to campus)</li>
-                                <li>First fully autonomous indoor prototype (V1)</li>
-                                <li>Open-source Python AWG optimization library</li>
+                                <li>Real-time physical scheduler (Order of Merit)</li>
+                                <li>P1 Closed-Cycle Solar Sorption unit deployment</li>
+                                <li>HVAC Condensate agronomic trial (Soil desalination)</li>
                                 <li>Year 1 interim report to SAFIR Committee</li>
                             </ul>
                         </div>
@@ -1272,9 +1301,11 @@
                 <p>A joint initiative of SAFIR and SCAI at Sorbonne University Abu Dhabi, in strategic partnership with Ma Hawa — pioneering Eco-Autonomous Intelligence and cross-domain research training in hyper-arid environments, 2026–2028.</p>
                 <p style="margin-top: 20px; font-size: 0.8rem; color: var(--muted);">
                     <span style="display: block; font-size: 0.6rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--bordeaux-light); margin-bottom: 8px;">Project Coordination</span>
-                    Xavier Fresquet<br>
-                    <a href="mailto:safaa.elsayed@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Safaa El Sayed</a><br>
-                    <a href="mailto:beatriz.garcia@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Beatriz Garcia</a>
+                    <strong>Dr. Xavier Fresquet</strong><br>
+                    Head of SCAI, Abu Dhabi — Paris<br>
+                    <a href="mailto:xavier.fresquet@sorbonne.ae" style="color: var(--muted); text-decoration: none;">xavier.fresquet@sorbonne.ae</a> | +971 58 576 9497<br><br>
+                    <a href="mailto:safaa.elsayed@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Safaa El Sayed</a> (Assistant Professor of Mathematics)<br>
+                    <a href="mailto:beatriz.garcia@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Dr. Beatriz Garcia</a> (Sustainability Officer)
                 </p>
             </div>
             <div class="footer-col">
@@ -1298,7 +1329,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 SAFIR &amp; SCAI — Sorbonne University Abu Dhabi. All rights reserved. &nbsp;·&nbsp; Project coordinated by <strong style="color: var(--muted-light);">Xavier Fresquet</strong>, <a href="mailto:safaa.elsayed@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Safaa El Sayed</a> &amp; <a href="mailto:beatriz.garcia@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Beatriz Garcia</a></p>
+            <p>© 2026 SAFIR &amp; SCAI — Sorbonne University Abu Dhabi. All rights reserved. &nbsp;·&nbsp; Project coordinated by <strong style="color: var(--muted-light);">Dr. Xavier Fresquet</strong>, <a href="mailto:safaa.elsayed@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Safaa El Sayed</a> &amp; <a href="mailto:beatriz.garcia@sorbonne.ae" style="color: var(--muted); text-decoration: none;">Dr. Beatriz Garcia</a></p>
             <div class="uae-flag">
                 <div class="flag-mini">
                     <div class="red-bar"></div>

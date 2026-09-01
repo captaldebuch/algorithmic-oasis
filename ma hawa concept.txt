@@ -1,0 +1,87 @@
+## 0. Le verdict avant le brainstorm
+
+Trois choses tuent le concept tel qu'énoncé, autant les poser d'emblée.
+
+**(a) Le rapport que vous m'envoyez ne répond pas à votre question.** Il évalue des AWG industriels à compression de vapeur, 0,35–0,65 kWh/L. Transposé : 20 L/nuit = 7–13 kWh. Soit ~2,5 kWc de PV + 10 kWh de batterie. Rien de portable, rien de frugal, rien en bois. Le rapport recommande explicitement la condensation active *parce qu'il raisonne à l'échelle industrielle avec raccordement réseau*. Sa conclusion ne se transpose pas à votre échelle.
+
+**(b) La condensation radiative passive nocturne ne marche pas aux EAU.** Nuit d'août à Abu Dhabi : 33 °C / 75 % HR → point de rosée 28 °C, soit 5 K de dépression à obtenir. Le refroidissement radiatif nocturne donne 3–5 K sub-ambiant en air *sec*; ici la vapeur d'eau ferme la fenêtre atmosphérique 8–13 µm et la puissance nette tombe à 20–40 W/m². Rendement réel : 0,1–0,3 L/m²/nuit. Le rapport donne 3–10 L/m²/jour pour les filets, mais c'est du **brouillard advectif** (Atacama, Canaries), pas de la rosée du Golfe. Un condenseur passif de 10 m² vous donnera 1 à 3 L. Décoratif.
+
+**(c) L'alternative honnête que vous devriez écarter explicitement, pas ignorer.** Chaque split de clim aux EAU produit 0,5–1,5 L/h de condensat, soit 10–25 L/jour, *déjà payé* par le refroidissement. Capter le condensat d'un split + stockage + goutte-à-goutte piloté = le même objet, 5 % du coût, 5× le débit. Si l'objectif est « arroser un jardin à Abu Dhabi », c'est la bonne réponse et le reste est un exercice de style. Si l'objectif est « nœud autonome hors réseau / démonstrateur », on continue.
+
+Je continue, mais en changeant de physique.
+
+---
+
+## 1. Le pivot : sorption, pas condensation
+
+L'air du Golfe la nuit contient 24 g d'eau par kg d'air sec. Un sel déliquescent l'absorbe **passivement**, sans aucune énergie. Le coût énergétique est reporté au jour, où il devient **thermique solaire (η ≈ 50–60 %)** au lieu d'électrique-PV (η ≈ 20 %). Facteur 3 sur la surface de captage. C'est exactement l'inflexion que le rapport signale en §4.3 (0,177 kWh/L projeté pour le LiCl liquide contre 0,35 pour la compression) — sauf qu'à votre échelle ce n'est pas une projection, c'est la seule option viable.
+
+Cycle : nuit = lit sorbant ouvert à l'air humide; jour = capot vitré fermé, désorption à 70–90 °C, vapeur pure condensée dans une jarre.
+
+## Ordre d'exécution
+
+Faites 1 → 2 → 3. L'option 1 vous donne de l'eau et un jeu de données ce mois-ci; l'option 2 est l'objet de recherche; l'option 3 n'est crédible qu'avec 1 et 2 en carte de visite.
+
+---
+
+## 1. Condensat de clim : rien à inventer
+
+C'est une pratique standard (crédit LEED WE, récupération de condensat). Le problème n'est pas technique, il est administratif.
+
+**Où capter.** Pas les ventilo-convecteurs de bureau : ils recyclent de l'air déjà sec, rendement dérisoire. Ciblez la **CTA d'air neuf (PAU/DOAS)**, en toiture ou en local technique. Ordre de grandeur : 1 000 L/s d'air neuf passant de 35 °C/60 % (21 g/kg) à 13 °C de soufflage (9 g/kg) → 12 g/kg × 1,2 kg/m³ = **~50 L/h**. Une seule CTA suffit à noyer votre jardin.
+
+**Montage minimal, réversible, non invasif.**
+- Interception au point accessible de la ligne de drain (PVC/cuivre 3/4", gravitaire), **en aval du siphon**. Ne jamais casser le siphon : sur CTA en aspiration, la dépression du caisson bloque l'écoulement et fait entrer de l'air.
+- Cuve 200 L (IBC ou fût PEHD opaque — opaque, sinon algues) + préfiltre 100 µm.
+- **Trop-plein renvoyé au drain d'origine.** Règle de conception : en cas de saturation ou de panne, le système retrouve exactement son comportement initial. C'est l'argument qui vous fera accepter par les services techniques.
+- Jamais de restriction ni de contre-pression sur le drain : bac de condensats noyé = biofilm = incident bâtiment à votre nom.
+
+**Qualité.** pH 5–7, TDS < 20 mg/L, quasi-distillée. Risques réels : biofilm/*Legionella* dans la cuve, cuivre/zinc lessivés de la batterie, résidus de produits de nettoyage de serpentin. Pour l'irrigation : correct, mais eau agressive et sans Ca/Mg → elle lessive les cations du sol. Correctif à 2 € : lit de gravier dolomitique dans la cuve. Non potable, et ne le laissez jamais suggérer sur une étiquette.
+
+**Instrumentation (c'est la vraie valeur).** Auget basculeur de pluviomètre calibré en mL/basculement, ou cellule de charge sous cuve (HX711), ESP32, log 1/min. Croisez avec T/HR extérieures et, si le service technique le donne, l'énergie frigorifique. Vous obtenez L/jour vs psychrométrie et L/kWh_frigo réel — donnée que personne ne publie pour le Golfe.
+
+**Ce qui reste à inventer :** rien d'hydraulique. La couche de contrôle, l'allocation d'eau, l'objet de stockage/distribution, et le dataset. Dites-le tel quel dans la demande d'autorisation, ça passe mieux qu'un discours d'innovation.
+
+Rendement : ~200 L/jour irriguent 40–80 m² de jardin ombré en goutte-à-goutte enterré.
+
+---
+
+## 2. Démonstrateur sorption : commencez par une balance, pas par une machine
+
+**P0 — banc gravimétrique, 2 semaines, ~150 €.** Aucun capteur solaire, aucun condenseur. Objectif unique : mesurer la reprise nocturne.
+
+- Coupons de 50 g, 4 candidats : (a) CaCl₂ 40 % imprégné sur cellulose (buvard, coton, luffa), (b) CaCl₂ confiné en hydrogel (alginate de calcium ou PAAm), (c) vermiculite/CaCl₂, (d) gel de silice témoin.
+- Pesée 18:00 / 06:00, balance 0,01 g, avec un témoin en tôle nue.
+- Attendu à 75 % HR : 0,4–1,2 g/g. En dessous de 0,4, le concept ne tient pas.
+- **Le mode de défaillance à traquer dès P0 :** au-dessus de ~80 % HR le CaCl₂ déliquesce et coule. Bac de récupération sous chaque coupon, pesé aussi. Si (a) coule et (b) ne coule pas, votre décision matériau est prise en deux semaines.
+
+**P1 — cycle complet, 0,25 m², ~250 €.** Caisson bois + vitrage verre (pas de PC, il jaunit à 50 °C + UV), absorbeur alu peint noir mat, lit sorbant amovible.
+- Cible de désorption 80–90 °C. Vérification thermo : p_sat(80 °C) = 48 kPa contre p_sat(45 °C) = 9,6 kPa → la condensation à 50–55 °C contre l'ambiant à 45 °C est largement possible.
+- **Le vrai goulot est le rejet de chaleur, pas la thermo.** 0,63 kWh de latent par litre; 3 L en 6 h = ~350 W à évacuer à 45 °C ambiant. En convection naturelle (≈5 W/m²·K, ΔT 15 K) il faut ~5 m² d'ailettes. Pour P1 : radiateur de chauffage automobile d'occasion + ventilateur 12 V (15 €, 300 W dissipés sans discussion). La jarre en terre cuite, c'est pour l'objet fini, pas pour la mesure.
+- Métrologie : cellule de charge sous le collecteur d'eau (meilleure que tout débitmètre à ces débits), T/HR SHT41 entrée/sortie, thermocouples absorbeur et condenseur, cellule PV calibrée comme pyranomètre. 20 nuits consécutives.
+- **Attendu réel : 0,5–1,5 L/m²/jour**, pas les 2,5 théoriques. Une première itération perd toujours la moitié.
+- Contrôle chloride obligatoire sur l'eau produite : conductimètre + test AgNO₃. Au-delà de ~30 mg/L Cl⁻ sur sol du Golfe déjà à forte CE, vous salinisez le jardin — le sorbant est disqualifié, pas le protocole d'arrosage.
+
+L'Arduino n'intervient qu'en P1, et seulement pour logger. L'ouverture/fermeture des volets : vérin à cire de lucarne de serre, 25 €, zéro électronique, zéro batterie. C'est la pièce la plus élégante du projet.
+
+---
+
+## 3. Ma Hawa : ce qui est adaptable, et ce qui ne l'est pas
+
+Ma Hawa relève de Baynunah Watergeneration Technologies SP, à Abu Dhabi, avec une gamme GENNY, GEN-L, GEN-M PRO, GEN-M1. Cette nomenclature est celle de Watergen — donc, très probablement, licence/intégration plutôt que technologie propre. À vérifier avant tout rendez-vous, mais si c'est le cas : **le cœur thermodynamique ne leur appartient pas et n'est pas modifiable par eux**. Tout ce qui est adaptable est en aval.
+
+Second point de vigilance : l'annonce de 5 litres par kWh (0,2 kWh/L) contredit les 0,35 kWh/L que votre rapport attribue au GEN-L. C'est au mieux une pointe à point de rosée 28 °C, pas une moyenne annuelle. Première question en réunion : la courbe SEC mesurée en fonction du point de rosée, sur 12 mois.
+
+**Les quatre angles réellement exploitables :**
+
+1. **Mode « irrigation grade ».** Leurs machines dépensent de l'énergie en filtration 7 étages, UV-C et reminéralisation pour la potabilité. Pour arroser, tout cela est du gaspillage. Un firmware qui court-circuite le post-traitement et ne fait tourner le compresseur que dans la fenêtre 02:00–07:00 sur PV+batterie : gain SEC immédiat, nouveau marché (paysage, agriculture) à matériel constant. C'est l'offre la plus facile à leur vendre.
+2. **Algorithme d'ordonnancement psychrométrique.** Leur faiblesse structurelle : des machines plug-and-play qui tournent à plat. Optimisation marche/arrêt sur prévision de point de rosée × production PV × état de cuve × demande hydrique. C'est votre apport réel et c'est publiable.
+3. **Étage sorption en préconditionnement** (l'hybride §3.2 du rapport), pour tenir en hiver et par HR basse. Vrai sujet de R&D — mais Khalifa University travaille déjà avec eux sur la génération d'eau atmosphérique depuis plusieurs années. Vous arriverez en second sur ce terrain.
+4. **Symbiose condensat/AWG sur campus.** Vos données de l'option 1 leur donnent le benchmark qu'ils n'ont pas : combien d'eau gratuite le bâtiment produit déjà, et à partir de quel seuil leur machine se justifie.
+
+**Franchise sur le positionnement.** Un labo d'humanités numériques n'a aucune crédibilité sur un cycle frigorifique, et prétendre co-concevoir leur matériel vous ferait perdre la réunion. La demande crédible est asymétrique et peu coûteuse pour eux : **prêt d'une unité portable ou d'un GEN-M1, sous-comptée, 12 mois de log, MoU de partage de données, publication conjointe sur la SEC réelle vs psychrométrie du Golfe.** Ils viennent d'obtenir un record Guinness au Grand Prix d'Abu Dhabi : ils sont en phase de capital réputationnel, une publication académique indépendante a de la valeur pour eux. Ajoutez l'angle « Make it in the Emirates » sur la fabrication locale du démonstrateur bois/sorption — c'est le seul terrain où vous n'êtes pas en concurrence avec Khalifa.
+
+---
+
+**Prochaine décision, une seule :** est-ce que vous demandez l'accès à la CTA cette semaine (option 1, 3 semaines de délai administratif typique) ou est-ce que vous commencez le banc gravimétrique ce week-end (option 2, aucune autorisation nécessaire) ? Les deux coûtent moins de 300 € et ne dépendent l'un de l'autre en rien.
+
